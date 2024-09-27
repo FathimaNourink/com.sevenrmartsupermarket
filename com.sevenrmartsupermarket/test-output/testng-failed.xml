@@ -4,24 +4,12 @@
   <listeners>
     <listener class-name="com.sevenrmartsupermarket.listeners.ExtentReport"/>
   </listeners>
-  <test thread-count="5" parallel="tests" name="Execution in  firefox browser(failed)">
-    <parameter name="browser" value="firefox"/>
-    <classes>
-      <class name="com.sevenrmartsupermarket.tests.LoginTest">
-        <methods>
-          <include name="launchBrowser"/>
-          <include name="captureFailureScreenShot"/>
-          <include name="verifyLoginDataProvider"/>
-          <include name="verifyLogin"/>
-        </methods>
-      </class> <!-- com.sevenrmartsupermarket.tests.LoginTest -->
-    </classes>
-  </test> <!-- Execution in  firefox browser(failed) -->
   <test thread-count="5" parallel="tests" name="Execution in Chrome browser(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.sevenrmartsupermarket.tests.LoginTest">
         <methods>
+          <include name="launchBrowser"/>
           <include name="launchBrowser"/>
           <include name="captureFailureScreenShot"/>
           <include name="verifyLoginDataProvider"/>
@@ -36,6 +24,7 @@
       <class name="com.sevenrmartsupermarket.tests.LoginTest">
         <methods>
           <include name="launchBrowser"/>
+          <include name="launchBrowser"/>
           <include name="captureFailureScreenShot"/>
           <include name="verifyLoginDataProvider"/>
           <include name="verifyLogin"/>
@@ -43,4 +32,18 @@
       </class> <!-- com.sevenrmartsupermarket.tests.LoginTest -->
     </classes>
   </test> <!-- Execution in  edge browser(failed) -->
+  <test thread-count="5" parallel="tests" name="Execution in  firefox browser(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.sevenrmartsupermarket.tests.LoginTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="launchBrowser"/>
+          <include name="captureFailureScreenShot"/>
+          <include name="verifyLoginDataProvider"/>
+          <include name="verifyLogin"/>
+        </methods>
+      </class> <!-- com.sevenrmartsupermarket.tests.LoginTest -->
+    </classes>
+  </test> <!-- Execution in  firefox browser(failed) -->
 </suite> <!-- Failed suite [cross browser execution] -->

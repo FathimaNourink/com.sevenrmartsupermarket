@@ -4,12 +4,26 @@
   <listeners>
     <listener class-name="com.sevenrmartsupermarket.listeners.ExtentReport"/>
   </listeners>
+  <test thread-count="5" parallel="tests" name="SubCategoryFunctions(failed)">
+    <classes>
+      <class name="com.sevenrmartsupermarket.tests.SubCategoryTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="verifyAllSubCategorynames"/>
+          <include name="captureFailureScreenShot"/>
+          <include name="verifySubCategoryHeader"/>
+          <include name="verifyNewSubCategory"/>
+        </methods>
+      </class> <!-- com.sevenrmartsupermarket.tests.SubCategoryTest -->
+    </classes>
+  </test> <!-- SubCategoryFunctions(failed) -->
   <test thread-count="5" parallel="tests" name="LoginDetails(failed)">
     <classes>
       <class name="com.sevenrmartsupermarket.tests.LoginTest">
         <methods>
           <include name="launchBrowser"/>
-          <include name="FailurescreenShot"/>
+          <include name="captureFailureScreenShot"/>
+          <include name="verifyLoginDataProvider"/>
           <include name="verifyLogin"/>
         </methods>
       </class> <!-- com.sevenrmartsupermarket.tests.LoginTest -->

@@ -1,11 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-24T21:43:15 IST" name="group execution" finished-at="2024-09-24T21:43:15 IST" duration-ms="15">
+  <suite started-at="2024-09-26T11:12:14 IST" name="Default suite" finished-at="2024-09-26T11:12:25 IST" duration-ms="11148">
     <groups>
     </groups>
-    <test started-at="2024-09-24T21:43:15 IST" name="login testing" finished-at="2024-09-24T21:43:15 IST" duration-ms="15">
-    </test> <!-- login testing -->
-  </suite> <!-- group execution -->
+    <test started-at="2024-09-26T11:12:14 IST" name="Default test" finished-at="2024-09-26T11:12:25 IST" duration-ms="11148">
+      <class name="com.sevenrmartsupermarket.tests.HomeTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525]" started-at="2024-09-26T11:12:14 IST" name="launchBrowser" finished-at="2024-09-26T11:12:17 IST" duration-ms="3642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="verifyProfileName()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525]" started-at="2024-09-26T11:12:17 IST" name="verifyProfileName" finished-at="2024-09-26T11:12:18 IST" duration-ms="470" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProfileName -->
+        <test-method is-config="true" signature="captureFailureScreenShot(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525]" started-at="2024-09-26T11:12:18 IST" name="captureFailureScreenShot" finished-at="2024-09-26T11:12:18 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyProfileName status=SUCCESS method=HomeTest.verifyProfileName()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureFailureScreenShot -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525]" started-at="2024-09-26T11:12:18 IST" name="launchBrowser" finished-at="2024-09-26T11:12:21 IST" duration-ms="3307" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="verifyProfilePictureIsDisplayed()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525]" started-at="2024-09-26T11:12:21 IST" name="verifyProfilePictureIsDisplayed" finished-at="2024-09-26T11:12:22 IST" duration-ms="382" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProfilePictureIsDisplayed -->
+        <test-method is-config="true" signature="captureFailureScreenShot(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525]" started-at="2024-09-26T11:12:22 IST" name="captureFailureScreenShot" finished-at="2024-09-26T11:12:22 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyProfilePictureIsDisplayed status=SUCCESS method=HomeTest.verifyProfilePictureIsDisplayed()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureFailureScreenShot -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525]" started-at="2024-09-26T11:12:22 IST" name="launchBrowser" finished-at="2024-09-26T11:12:24 IST" duration-ms="2323" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="verifySubCategoryNavigation()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525]" started-at="2024-09-26T11:12:24 IST" name="verifySubCategoryNavigation" finished-at="2024-09-26T11:12:25 IST" duration-ms="978" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySubCategoryNavigation -->
+        <test-method is-config="true" signature="captureFailureScreenShot(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525]" started-at="2024-09-26T11:12:25 IST" name="captureFailureScreenShot" finished-at="2024-09-26T11:12:25 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySubCategoryNavigation status=SUCCESS method=HomeTest.verifySubCategoryNavigation()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@20d525] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureFailureScreenShot -->
+      </class> <!-- com.sevenrmartsupermarket.tests.HomeTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

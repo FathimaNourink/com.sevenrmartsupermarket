@@ -43,7 +43,7 @@ public class LoginTest extends Base {
 
 	loginPage=new LoginPage(driver);
 	loginPage.login(userName, password);
-
+	Assert.assertTrue(homePage.isProfilePictureDisplayed());
 	}
 
 	}
