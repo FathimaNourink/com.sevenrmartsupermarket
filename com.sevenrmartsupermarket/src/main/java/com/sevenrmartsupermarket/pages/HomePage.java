@@ -33,6 +33,7 @@ public class HomePage
     public SubCategoryPage clickOnSubCategory() 
     {
         subCategory.click();
+        
         return new SubCategoryPage(driver);
         
     }
