@@ -29,7 +29,7 @@ public class HomeTest extends Base {
         homePage = loginPage.login("admin", "admin");
 
         subCategoryPage = homePage.clickOnSubCategory();
-        String actualHeader = subCategoryPage.subCategoryPageHeader();
+        String actualHeader = subCategoryPage.getSubCategoryPageHeader();
         String expectedHeader = "List Sub Categories";
         Assert.assertEquals(actualHeader, expectedHeader);
     }
@@ -38,7 +38,6 @@ public class HomeTest extends Base {
     public void verifyProfilePictureIsDisplayed() {
         loginPage = new LoginPage(driver);
         homePage = loginPage.login("admin", "admin");
-
         boolean isProfilePictureDisplayed = homePage.isProfilePictureDisplayed();
         Assert.assertTrue(isProfilePictureDisplayed);
     }

@@ -5,19 +5,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class HomePage 
 {
 	WebDriver driver;	
-	 
-
+ 
     @FindBy(xpath = "//a[@class='d-block']")
-    WebElement profileName;
-    @FindBy(xpath = "//div[@class='inner']//p[(text()='Sub Category')]//following::a[1]")
-    WebElement subCategory;
+    private WebElement profileName;
+    @FindBy(xpath = "//a[contains(@class, 'nav-link') and p[text()='Sub Category']]")
+    private WebElement subCategory;
+    @FindBy(xpath ="//a[contains(@class, 'nav-link') and p[text()='Manage News']]")
+    private WebElement manageNews;
     @FindBy(xpath = "//img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/user2-160x160.jpg']")
-    WebElement profilePicture;
-    
-
+    private WebElement profilePicture;
     
     public HomePage(WebDriver driver) 
     {
@@ -37,6 +37,13 @@ public class HomePage
         return new SubCategoryPage(driver);
         
     }
+    public void clickOnManageNews() 
+    
+    {
+    	manageNews.click();
+        
+    }
+    
 
     public boolean isProfilePictureDisplayed() 
     {
