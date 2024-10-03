@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.sevenrmartsupermarket.utilities.GeneralUtility;
+
 
 public class HomePage 
 {
@@ -19,6 +21,8 @@ public class HomePage
     @FindBy(xpath = "//img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/user2-160x160.jpg']")
     private WebElement profilePicture;
     
+    GeneralUtility utility=new GeneralUtility();
+
     public HomePage(WebDriver driver) 
     {
         this.driver = driver;
@@ -33,21 +37,24 @@ public class HomePage
     public SubCategoryPage clickOnSubCategory() 
     {
         subCategory.click();
-        
         return new SubCategoryPage(driver);
         
     }
-    public void clickOnManageNews() 
-    
-    {
-    	manageNews.click();
-        
+    public ManageNewsPage clickOnManageNews() {
+        manageNews.click();
+        return new ManageNewsPage(driver); 
     }
-    
+
 
     public boolean isProfilePictureDisplayed() 
     {
         return profilePicture.isDisplayed();
     }
+
+	public String getImageAdmin() {
+		
+		return utility.getAttribute(profilePicture, "src");
+
+	}
     
 }

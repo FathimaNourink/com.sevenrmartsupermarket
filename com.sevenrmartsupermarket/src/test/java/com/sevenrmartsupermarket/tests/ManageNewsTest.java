@@ -12,6 +12,7 @@ public class ManageNewsTest extends Base {
     HomePage homePage;
     ManageNewsPage manageNewsPage;
 
+   
     @Test
     public void verifyCreateNewNews() {
     	loginPage = new LoginPage(driver);

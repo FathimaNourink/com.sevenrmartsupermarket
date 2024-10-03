@@ -22,7 +22,7 @@ public class SubCategoryTest extends Base {
         homePage.clickOnSubCategory();
 
         String actualHeader = subCategoryPage.getSubCategoryPageHeader();
-        System.out.println("Actual Subcategory Page Header: " + actualHeader);
+        System.out.println(actualHeader);
         String expectedHeader = "List Sub Categories";
         Assert.assertEquals(actualHeader, expectedHeader);
     }
@@ -38,7 +38,7 @@ public class SubCategoryTest extends Base {
         homePage.clickOnSubCategory();
         subCategoryPage.clickOnNewSubCategory();
         String actualHeader = subCategoryPage.getNewPageHeader();
-        System.out.println("Actual Header of Add Sub Category Page: " + actualHeader);
+        System.out.println(actualHeader);
         String expectedHeader = "Add Sub Category";
         Assert.assertEquals(actualHeader, expectedHeader);
     }

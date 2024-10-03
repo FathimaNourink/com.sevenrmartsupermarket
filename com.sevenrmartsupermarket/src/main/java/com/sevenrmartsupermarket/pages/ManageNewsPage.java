@@ -28,17 +28,20 @@ public class ManageNewsPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void clickCreateNewNews() {
+    public  void clickCreateNewNews() {
         createNewNewsButton.click();
+		
     }
 
     public void enterNews(String news) {
         newsTextArea.sendKeys(news);
+		
     }
 
     public void clickSaveButton() {
         saveButton.click();
     }
+    
 
     public boolean isSuccessAlertDisplayed() {
         return successAlert.isDisplayed();

@@ -12,41 +12,48 @@ import com.sevenrmartsupermarket.utilities.GeneralUtility;
 
 public class LoginTest extends Base {
 
-	LoginPage loginPage;
-	HomePage homePage;
-	ExcelReader excelReader = new ExcelReader();
+    LoginPage loginPage;
+    HomePage homePage;
+    ExcelReader excelReader = new ExcelReader();
 
-	@Test
-	public void verifyLogin() {
-	loginPage = new LoginPage(driver);
-	homePage = new HomePage(driver);
-	loginPage.login("admin", "admin");
 
-	loginPage.login();
+    @Test
+    public void verifyLogin() {
+        loginPage = new LoginPage(driver);
+        
+              
+        excelReader.setExcelFile("loginData", "Login_Credentials");
+        homePage = loginPage.login(excelReader.getCellData(1,0), excelReader.getCellData(1,1));
+        
+        String value = excelReader.getCellData(1, 1);
+        System.out.println(value);
 
-	loginPage.login("anoojk30", " admin");
-	excelReader.setExcelFile("loginData", "Login_Credentials");
-	loginPage.login(excelReader.getCellData(4, 0), excelReader.getCellData(4, 1));
-	String value = excelReader.getCellData(1, 1);
-	System.out.println(value);
-	String actualProfileName = homePage.getProfileName();
-	System.out.println(actualProfileName);
-	String expectedProfileName = "Admin";
-	Assert.assertEquals(actualProfileName, expectedProfileName);
+        String name = GeneralUtility.getRandomFirstName();
+        System.out.println(name);
+        
+        String actualProfileName = homePage.getProfileName();
+        String expectedProfileName = "Admin";
+        Assert.assertEquals(actualProfileName, expectedProfileName);
 
-	String name = GeneralUtility.getRandomFirstName();
-	System.out.println(name);
-
-	}
-	@Test(dataProvider = "loginDetails",dataProviderClass = DataProviders.class)
-	public void verifyLoginDataProvider(String userName, String password) {
-
-	loginPage=new LoginPage(driver);
-	loginPage.login(userName, password);
-	Assert.assertTrue(homePage.isProfilePictureDisplayed());
-	}
+        
 
 	}
 
 
+    @Test
+    public void verifyRememberMe() {
+		loginPage = new LoginPage(driver);
+		loginPage.enterUserName("admin");
+		loginPage.enterPassword("admin");
+		Assert.assertTrue(loginPage.rememberMeBox());
+			
+	}
 
+    @Test(dataProvider = "loginDetails", dataProviderClass = DataProviders.class)
+    public void verifyLoginData(String userName, String password) {
+        loginPage = new LoginPage(driver);
+        homePage = loginPage.login(userName, password);
+        
+        Assert.assertTrue(homePage.isProfilePictureDisplayed());
+    }
+}

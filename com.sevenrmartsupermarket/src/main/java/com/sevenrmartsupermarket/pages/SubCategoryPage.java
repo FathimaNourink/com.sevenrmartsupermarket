@@ -42,9 +42,12 @@ public class SubCategoryPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         pageUtility = new PageUtility(driver);
+        waitUtility = new WaitUtility(driver);
+
     }
 
     public String getSubCategoryPageHeader() {
+        waitUtility.waitForElementVisiblity(driver, subCategoryHeader);  
         return subCategoryHeader.getText();
     }
 
@@ -78,8 +81,7 @@ public class SubCategoryPage {
     }
 
     public void saveSubCategory() {
-        waitUtility = new WaitUtility(driver);
-        waitUtility.waitforElementtobeClickable(saveButton);
+        waitUtility.waitForElementClickable(driver, saveButton);
         saveButton.click();
     }
 

@@ -8,7 +8,6 @@ import com.sevenrmartsupermarket.pages.LoginPage;
 import com.sevenrmartsupermarket.pages.SubCategoryPage;
 
 public class HomeTest extends Base {
-
     LoginPage loginPage;
     HomePage homePage;
     SubCategoryPage subCategoryPage;
@@ -16,7 +15,7 @@ public class HomeTest extends Base {
     @Test
     public void verifyProfileName() {
         loginPage = new LoginPage(driver);
-        homePage = loginPage.login("admin", "admin");
+        loginPage.login();
 
         String actualProfileName = homePage.getProfileName();
         String expectedProfileName = "Admin";  
@@ -25,20 +24,23 @@ public class HomeTest extends Base {
 
     @Test
     public void verifySubCategoryNavigation() {
-        loginPage = new LoginPage(driver);
-        homePage = loginPage.login("admin", "admin");
+    	loginPage = new LoginPage(driver);
+        homePage = loginPage.login();
+        subCategoryPage=homePage.clickOnSubCategory();   
 
-        subCategoryPage = homePage.clickOnSubCategory();
         String actualHeader = subCategoryPage.getSubCategoryPageHeader();
         String expectedHeader = "List Sub Categories";
         Assert.assertEquals(actualHeader, expectedHeader);
     }
 
     @Test
-    public void verifyProfilePictureIsDisplayed() {
-        loginPage = new LoginPage(driver);
-        homePage = loginPage.login("admin", "admin");
-        boolean isProfilePictureDisplayed = homePage.isProfilePictureDisplayed();
-        Assert.assertTrue(isProfilePictureDisplayed);
-    }
+public void verifyProfilePicture() {
+		
+		loginPage=new LoginPage(driver);
+		homePage=new HomePage(driver);
+		loginPage.login();
+		String actualOutput= homePage.getImageAdmin();
+		String expectedOutput="https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/user2-160x160.jpg";
+		Assert.assertEquals(actualOutput, expectedOutput);
+}
 }
