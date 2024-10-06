@@ -52,6 +52,7 @@ public class SubCategoryTest extends Base {
         homePage.clickOnSubCategory();
         subCategoryPage.clickOnSearch(); 
         String actualHeader = subCategoryPage.getSearchHeader(); 
+        System.out.println(actualHeader);
         String expectedHeader = "Search List Sub Categories";
         Assert.assertEquals(actualHeader, expectedHeader);
     }

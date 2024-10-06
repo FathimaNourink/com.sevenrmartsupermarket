@@ -11,7 +11,7 @@ ExcelReader excelReader=new ExcelReader();
 
 public Object[][] login()
 {
-	excelReader.setExcelFile("loginData", "Admin_Users_login");
+	excelReader.setExcelFile("logindata", "Admin_Users_login");
 	return excelReader.getMultidimentionalData(4,2);
 	
 }
